@@ -1,22 +1,38 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { todoReducer } from "../todoreducer"
 
-export const useTodo = ()=> {
-    const initialstate =[]
-    const [todos, dispatch]= useReducer(todoReducer, initialstate, init)
-    const handleNewTodo= todo =>{
-        const action ={
+export const useTodo = () => {
+    const initialState = []
+    const init = () => {
+        return JSON.parse(localStorage.getItem('todos')) || []
+    }
+
+    const [todos, dispatch] = useReducer(
+        todoReducer,
+        initialState,
+        init)
+
+    const todosCount = todos.lenght
+    const pendindgTodosCount = todos.filter(todo => !todo.done).lenght
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
+
+
+    const handleNewTodo = todo => {
+        const action = {
             type: "Add Todo",
-            payload:todo,
+            payload: todo,
         }
-        dispatch (action)
+        dispatch(action)
     }
     const handleDeleteTodo = id => {
-    const action ={
-        type: "Delete Todo",
-        payload:id,
-    }
-    dispatch(action)
+        const action = {
+            type: "Delete Todo",
+            payload: id,
+        }
+        dispatch(action)
     }
     const handleCompleteTodo = id => {
         const action = {
@@ -27,15 +43,18 @@ export const useTodo = ()=> {
     }
     const handleUpdateTodo = (id, description) => {
         const action = {
-            type: "Complete Todo",
-            payload:{
+            type: "Update Todo",
+            payload: {
                 id,
                 description
-            } 
+            }
         }
         dispatch(action)
     }
-    return {
+    return{
+        todos,
+        todosCount,
+        pendindgTodosCount,
         handleNewTodo,
         handleDeleteTodo,
         handleCompleteTodo,
