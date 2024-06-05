@@ -1,11 +1,10 @@
 import React from 'react'
+import { TodoItem } from './TodoItem'
 
 export const TodoList = () => {
   return (
     <ul>
-        <li>
-            <p></p>
-        </li>
+       <TodoItem/>
     </ul>
   )
 }

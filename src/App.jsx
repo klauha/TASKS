@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { TodoList } from './commons/TodoList'
+import { TodoAdd } from './commons/TodoAdd'
 
 function App() {
 
@@ -16,6 +14,7 @@ function App() {
         </div>
         <div className="add-todo">
           <h3>Agregar Tarea</h3>
+          <TodoAdd/>
         </div>
         <TodoList />
       </div>
