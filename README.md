@@ -1,4 +1,4 @@
-#  Poryecto React + Vite
+#  Proyecto React + Vite
 
 ![Texto alternativo](../tasks/public/app.png)
 
