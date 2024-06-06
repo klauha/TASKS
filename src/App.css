@@ -1,32 +1,42 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+ 
 }
 
 :root {
-	--rojo: #ba181b;
-	--azul: #00b4d8;
-	--azul-hover: #48cae4;
-	--rojo-hover: #e5383b;
-	--verde: #09a129;
+	--fucsia: #ff00ff;
+	--morado: #8000ff;
+	--morado-hover: #6f00cc;
+	--fucsia-hover: #ff4dff;
+	--verde: #00ff85;
+	--amarillo: #faff00;
 }
 
 body {
 	font-family: Poppins;
-	max-width: 1200px;
-	margin: 40px auto;
+	margin: 0;
+  padding: 0;
 	display: flex;
 	justify-content: center;
+	background-color: #000; 
+	color: #fff; 
+
 }
 
 .card-to-do {
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 	padding: 25px;
 	border-radius: 20px;
 	width: 700px;
+	background-color: #1a1a1a; /* Fondo de la tarjeta más oscuro */
+	color: #fff;
+  width: 800px;
+  padding: 35px;
 }
 
 h1 {
@@ -44,7 +54,7 @@ h1 {
 }
 
 .counter-todos span {
-	color: #f29559;
+	color: var(--amarillo);
 	font-weight: 700;
 	font-size: 24px;
 	margin-left: 10px;
@@ -63,19 +73,30 @@ ul li {
 	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
+	background-color: #222;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(128, 0, 255, 0.5); 
+
 }
 
 ul li span {
-	overflow: hidden;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
+	color: #fff;
+}
+ul li span div {
+  overflow: auto;
+  white-space: normal;
+  flex-grow: 1; 
 }
 
 ul li form {
 	flex: 1;
 	display: flex;
 	justify-content: space-between;
+
 }
 
 .input-update {
@@ -83,14 +104,13 @@ ul li form {
 	font-weight: 500;
 	font-family: inherit;
 	font-size: 18px;
-	color: #555;
-	width: 100%;
-	/* background-color: #000; */
+	color: #fff;
+	background-color: transparent;
 	outline: none;
 }
 
 .container-done {
-	background-color: white;
+	background-color: transparent;
 	width: 24px;
 	height: 24px;
 	border-radius: 20px;
@@ -104,10 +124,11 @@ ul li form {
 
 .text-decoration-dashed {
 	text-decoration: line-through;
+	color: #888;
 }
 
 .btn-delete {
-	background-color: var(--rojo);
+	background-color: var(--fucsia);
 	color: #fff;
 	padding: 15px;
 	display: flex;
@@ -118,14 +139,15 @@ ul li form {
 	transition: all 0.3s;
 	cursor: pointer;
 	font-family: inherit;
+	box-shadow: 0px 0px 10px var(--fucsia);
 }
 
 .btn-delete:hover {
-	background-color: var(--rojo-hover);
+	background-color: var(--fucsia-hover);
 }
 
 .btn-edit {
-	background-color: var(--azul);
+	background-color: var(--morado);
 	color: #fff;
 	padding: 15px;
 	display: flex;
@@ -136,10 +158,11 @@ ul li form {
 	transition: all 0.3s;
 	cursor: pointer;
 	font-family: inherit;
+	box-shadow: 0px 0px 10px var(--morado);
 }
 
 .btn-edit:hover {
-	background-color: var(--azul-hover);
+	background-color: var(--morado-hover);
 }
 
 form {
@@ -157,25 +180,27 @@ form {
 	border: none;
 	outline: none;
 	padding: 10px 20px;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15);
 	border-radius: 20px;
 	flex: 1;
 	font-family: inherit;
 	font-size: 17px;
-	color: #555;
+	color: #fff;
+	background-color: #333;
 }
 
 .btn-add {
 	border: none;
-	background-color: var(--azul);
+	background-color: var(--morado);
 	color: #fff;
 	padding: 5px 40px;
 	border-radius: 20px;
 	font-family: inherit;
 	cursor: pointer;
 	font-size: 17px;
+	box-shadow: 0px 0px 10px var(--morado);
 }
 
 .btn-add:hover {
-	background-color: var(--azul-hover);
+	background-color: var(--morado-hover);
 }

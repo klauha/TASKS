@@ -1,36 +1,47 @@
-import './App.css'
-import { TodoList } from './commons/TodoList'
-import { TodoAdd } from './commons/TodoAdd'
-import { useTodo } from './hooks/useTodo'
+
+import './App.css';
+import { TodoAdd } from './commons/TodoAdd';
+import { TodoList } from './commons/TodoList';
+import { useTodo } from './hooks/useTodo';
 
 function App() {
-  const { 
-    todos,
-    todosCount,
-    pendindgTodosCount,
-    handleNewTodo,
-    handleDeleteTodo,
-    handleCompleteTodo,
-    handleUpdateTodo
-  } = useTodo()
+	const {
+		todos,
+		todosCount,
+		pendingTodosCount,
+		handleNewTodo,
+		handleDeleteTodo,
+		handleCompleteTodo,
+		handleUpdateTodo,
+	} = useTodo();
 
-  return (
-    <>
-      <div className="card-to-do">
-        <h1>Tareas</h1>
-        <div className="counter-todos">
-          <h3>Nºde tareas:{todosCount}</h3>
-          <h3>Pendientes:{pendindgTodosCount}</h3>
-        </div>
-        <div className="add-todo">
-          <h3>Agregar Tarea</h3>
-          <TodoAdd />
-        </div>
-        <TodoList />
-      </div>
+	return (
+		<>
+			<div className='card-to-do'>
+				<h1>Tareas</h1>
+				<div className='counter-todos'>
+					<h3>
+						N° Tareas: <span>{todosCount}</span>
+					</h3>
+					<h3>
+						Pendientes: <span>{pendingTodosCount}</span>
+					</h3>
+				</div>
 
-    </>
-  )
+				<div className='add-todo'>
+					<h3>Agregar Tarea</h3>
+					<TodoAdd handleNewTodo={handleNewTodo} />
+				</div>
+
+				<TodoList
+					todos={todos}
+					handleUpdateTodo={handleUpdateTodo}
+					handleDeleteTodo={handleDeleteTodo}
+					handleCompleteTodo={handleCompleteTodo}
+				/>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
