@@ -1,9 +1,10 @@
 #  Proyecto React + Vite
 
-![Texto alternativo](../tasks/public/app.png)
+![Texto alternativo](./public/app.png)
 
 ## Aplicación de Tareas
-Esta es una aplicación de gestión de tareas desarrollada con React y Vite, que permite a los usuarios agregar, editar y eliminar tareas. La interfaz está diseñada con un estilo moderno y colorido, utilizando un esquema de colores neón.
+Esta es una aplicación de gestión de tareas desarrollada con React y Vite, que permite a los usuarios agregar, editar y eliminar tareas. La interfaz está diseñada con un estilo moderno y colorido.
+
 - Agregar Tarea: Permite añadir nuevas tareas utilizando el campo de entrada y el botón "Agregar".
 - Editar Tarea: Permite modificar una tarea existente haciendo clic en el botón de edición.
 - Eliminar Tarea: Permite borrar una tarea haciendo clic en el botón de eliminación.
